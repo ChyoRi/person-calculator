@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,html {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NanumSquareRound';
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.wrap > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% / 5);
+  padding: 20px;
+}
+
+.wrap > div > p {
+  text-align: center;
+}
+
+.wrap > div .price {
+  margin: 20px 0;
+  white-space: nowrap;
+}
+
+.wrap > div > .calc-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.wrap > div > .calc-area > button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.wrap > div > .calc-area > .person-count {
+  margin: 0 10px;
+}
+
+.wrap .total-price {
+  white-space: nowrap;
+}
