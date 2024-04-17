@@ -3,63 +3,62 @@ const minusBtn = document.querySelectorAll('.minus');
 const plusBtn = document.querySelectorAll('.plus');
 const totalSpan = document.querySelector('.total-price');
 let agePriceArray = [0, 0, 0, 0];
+console.log(agePriceArray);
 let prevTotalPrice = 0;
-let adultPrice = 0;
-let studentPrice = 0;
-let kidPrice = 0;
-let babyPrice = 0
 let totalPrice = 0;
+// let adultPrice = 0;
+// let studentPrice = 0;
+// let kidPrice = 0;
+// let babyPrice = 0
 
 // 일반
-const priceCalc = (target, targetCount) => {
-  switch(target.className) {
-    case 'person-count adult':
-      adultPrice = targetCount * priceArray[0]
-      break;
-    case 'person-count student':
-      studentPrice = targetCount * priceArray[1]
-      break;
-    case 'person-count kid':
-      kidPrice = targetCount * priceArray[2]
-      break;
-    default:
-      babyPrice = targetCount * priceArray[3]
-      break;
-  }
-
-  totalPrice = adultPrice + studentPrice + kidPrice + babyPrice;
-  totalSpan.innerHTML = `Total: ${totalPrice}원`;
-
-}
-
-
-// 배열
 // const priceCalc = (target, targetCount) => {
 //   switch(target.className) {
 //     case 'person-count adult':
-//       agePriceArray[0] = targetCount * priceArray[0]
+//       adultPrice = targetCount * priceArray[0]
 //       break;
 //     case 'person-count student':
-//       agePriceArray[1] = targetCount * priceArray[1]
+//       studentPrice = targetCount * priceArray[1]
 //       break;
 //     case 'person-count kid':
-//       agePriceArray[2] = targetCount * priceArray[2]
+//       kidPrice = targetCount * priceArray[2]
 //       break;
 //     default:
-//       agePriceArray[3] = targetCount * priceArray[3]
+//       babyPrice = targetCount * priceArray[3]
 //       break;
 //   }
 
-//   agePriceArray.forEach(item => {
-//     prevTotalPrice += item
-//     console.log(prevTotalPrice);
-//     totalPrice = prevTotalPrice - item;
-//   })
-  
+//   totalPrice = adultPrice + studentPrice + kidPrice + babyPrice;
 //   totalSpan.innerHTML = `Total: ${totalPrice}원`;
-//
 
 // }
+
+
+// 배열
+const priceCalc = (target, targetCount) => {
+  switch(target.className) {
+    case 'person-count adult':
+      agePriceArray[0] = targetCount * priceArray[0]
+      break;
+    case 'person-count student':
+      agePriceArray[1] = targetCount * priceArray[1]
+      break;
+    case 'person-count kid':
+      agePriceArray[2] = targetCount * priceArray[2]
+      break;
+    default:
+      agePriceArray[3] = targetCount * priceArray[3]
+      break;
+  }
+
+  agePriceArray.forEach(item => {
+    totalPrice += item
+  })
+  
+  totalSpan.innerHTML = `Total: ${totalPrice}원`;
+
+
+}
 
 const minus = (e) => {
   let target = e.currentTarget;
